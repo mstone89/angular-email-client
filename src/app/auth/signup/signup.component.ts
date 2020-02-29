@@ -15,7 +15,7 @@ export class SignupComponent implements OnInit {
             Validators.required,
             Validators.minLength(3),
             Validators.maxLength(20),
-            Validators.pattern(/^[a-z0-9]+$/)
+            Validators.pattern(/^[a-zA-Z0-9]*$/)
         ], [this.uniqueUsername.validate]),
         password: new FormControl('', [
             Validators.required,
@@ -49,6 +49,7 @@ export class SignupComponent implements OnInit {
     }
 
     onSignupSubmit() {
+        console.log(this.authForm.value);
         if (this.authForm.invalid) {
             return;
         }
