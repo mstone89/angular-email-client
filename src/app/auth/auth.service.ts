@@ -33,23 +33,21 @@ export class AuthService {
 
     signup(credentials: SignupCredentials) {
         const url = `${this.rootUrl}/auth/signup`;
-        return this.http.post<SignupResponse>(url, credentials, {
-            withCredentials: true
-        }).pipe(
-            tap(() => {
-                this.signedin$.next(true);
-            })
-        );
+        return this.http.post<SignupResponse>(url, credentials)
+            .pipe(
+                tap(() => {
+                    this.signedin$.next(true);
+                })
+            );
     }
 
     checkAuthStatus() {
         const url = `${this.rootUrl}/auth/signedin`;
-        return this.http.get(url, {
-            withCredentials: true
-        }).pipe(
-            tap((response) => {
-                console.log(response);
-            })
-        );
+        return this.http.get(url)
+            .pipe(
+                tap((response) => {
+                    console.log(response);
+                })
+            );
     }
 }
