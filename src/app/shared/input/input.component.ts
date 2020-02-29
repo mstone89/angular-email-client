@@ -9,6 +9,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class InputComponent implements OnInit {
     @Input() label: string;
     @Input() control: FormControl;
+    @Input() inputType: string;
 
     constructor() {
     }
@@ -17,7 +18,6 @@ export class InputComponent implements OnInit {
     }
 
     showErrors() {
-        console.log(this.control);
         const { dirty, touched, errors } = this.control;
         return dirty && touched && errors;
     }

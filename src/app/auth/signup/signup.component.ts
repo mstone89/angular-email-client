@@ -36,4 +36,9 @@ export class SignupComponent implements OnInit {
     ngOnInit() {
     }
 
-}
+    checkForPasswordMatchErrors() {
+        return this.authForm.get('password').touched &&
+            this.authForm.get('passwordConfirmation').touched &&
+            this.authForm.errors;
+    }
+ }
