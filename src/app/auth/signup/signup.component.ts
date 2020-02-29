@@ -41,4 +41,8 @@ export class SignupComponent implements OnInit {
             this.authForm.get('passwordConfirmation').touched &&
             this.authForm.errors;
     }
- }
+
+    onResetSignupForm() {
+        this.authForm.reset();
+    }
+}
