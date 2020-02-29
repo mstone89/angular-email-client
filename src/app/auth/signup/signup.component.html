@@ -1,5 +1,5 @@
 <h3>Create An Account</h3>
-<form class="ui form" [formGroup]="authForm">
+<form (ngSubmit)="onSignupSubmit()" class="ui form" [formGroup]="authForm">
     <app-input
         inputType="text"
         label="Username"
@@ -17,9 +17,11 @@
     ></app-input>
     <div *ngIf="checkForPasswordMatchErrors()" class="ui red basic label">
         <p *ngIf="authForm.errors.passwordsDoNotMatch">Passwords must match.</p>
+        <p *ngIf="authForm.errors.noConnection">No internet connection, signup failed.</p>
+        <p *ngIf="authForm.errors.unknownError">Signup failed.</p>
     </div>
     <div>
         <button class="ui submit button primary">Submit</button>
-        <button class="ui negative basic button" (click)="onResetSignupForm()">Clear</button>
+        <button class="ui black basic button" (click)="onResetSignupForm()">Clear</button>
     </div>
 </form>
