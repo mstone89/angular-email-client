@@ -23,7 +23,7 @@ export class SigninComponent implements OnInit {
         ])
     });
 
-    constructor(private auth: AuthService) { }
+    constructor(private auth: AuthService, private router: Router) { }
 
     ngOnInit() {
     }
@@ -33,6 +33,15 @@ export class SigninComponent implements OnInit {
             return;
         }
 
-        this.auth.signin(this.authForm.value).subscribe(() => {});
+        this.auth.signin(this.authForm.value).subscribe({
+            next: (response) => {
+                    // navigate to another route
+                },
+                error: ({ error }) => {
+                    if (error.username || error.password) {
+                        this.authForm.setErrors({ credentials: true });
+                    }
+                }
+        });
     }
 }
