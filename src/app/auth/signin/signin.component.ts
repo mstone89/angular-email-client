@@ -34,14 +34,14 @@ export class SigninComponent implements OnInit {
         }
 
         this.auth.signin(this.authForm.value).subscribe({
-            next: (response) => {
-                    // navigate to another route
-                },
-                error: ({ error }) => {
-                    if (error.username || error.password) {
-                        this.authForm.setErrors({ credentials: true });
-                    }
+            next: () => {
+                this.router.navigateByUrl('/inbox');
+            },
+            error: ({ error }) => {
+                if (error.username || error.password) {
+                    this.authForm.setErrors({ credentials: true });
                 }
+            }
         });
     }
 }
