@@ -10,6 +10,7 @@ import { EmailIndexComponent } from './email-index/email-index.component';
 import { EmailShowComponent } from './email-show/email-show.component';
 import { EmailPlaceholderComponent } from './email-placeholder/email-placeholder.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { EmailFormComponent } from './email-form/email-form.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
         EmailIndexComponent,
         EmailShowComponent,
         EmailPlaceholderComponent,
-        NotFoundComponent
+        NotFoundComponent,
+        EmailFormComponent
     ],
     imports: [
         CommonModule,
