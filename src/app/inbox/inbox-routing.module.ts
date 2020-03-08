@@ -1,3 +1,4 @@
+import { NotFoundComponent } from './not-found/not-found.component';
 import { EmailResolverService } from './email-resolver.service';
 import { EmailShowComponent } from './email-show/email-show.component';
 import { EmailPlaceholderComponent } from './email-placeholder/email-placeholder.component';
@@ -11,13 +12,20 @@ const routes: Routes = [
         component: InboxHomeComponent,
         children: [
             {
+                path: 'not-found',
+                component: NotFoundComponent
+            },
+            {
                 path: ':id',
                 component: EmailShowComponent,
                 resolve: {
                     email: EmailResolverService
                 }
             },
-            { path: '', component: EmailPlaceholderComponent }
+            {
+                path: '',
+                component: EmailPlaceholderComponent
+            }
         ]
     }
 ];
