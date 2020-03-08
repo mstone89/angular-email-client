@@ -1,3 +1,4 @@
+import { SharedModule } from './../shared/shared.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -12,10 +13,19 @@ import { NotFoundComponent } from './not-found/not-found.component';
 
 
 @NgModule({
-  declarations: [InboxHomeComponent, EmailCreateComponent, EmailReplyComponent, EmailIndexComponent, EmailShowComponent, EmailPlaceholderComponent, NotFoundComponent],
-  imports: [
-    CommonModule,
-    InboxRoutingModule
-  ]
+    declarations: [
+        InboxHomeComponent,
+        EmailCreateComponent,
+        EmailReplyComponent,
+        EmailIndexComponent,
+        EmailShowComponent,
+        EmailPlaceholderComponent,
+        NotFoundComponent
+    ],
+    imports: [
+        CommonModule,
+        InboxRoutingModule,
+        SharedModule
+    ]
 })
 export class InboxModule { }
