@@ -1,8 +1,11 @@
 <div class="ui celled list">
     <div class="item" *ngFor="let email of emails">
-        <div class="content">
-            <div class="header">Subject: {{ email.subject }}</div>
-            <p>From: {{ email.from }}</p>
-        </div>
+        <!-- relative link e.g. /inbox/{{id here}}-->
+        <a [routerLink]="email.id">
+            <div class="content">
+                <div class="header">Subject: {{ email.subject }}</div>
+                <p>From: {{ email.from }}</p>
+            </div>
+        </a>
     </div>
 </div>
