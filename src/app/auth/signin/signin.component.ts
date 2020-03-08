@@ -26,6 +26,11 @@ export class SigninComponent implements OnInit {
     constructor(private auth: AuthService, private router: Router) { }
 
     ngOnInit() {
+        this.auth.signedin$.subscribe((authenticated) => {
+            if (authenticated) {
+                this.router.navigateByUrl('/inbox');
+            }
+        });
     }
 
     onSigninSubmit() {

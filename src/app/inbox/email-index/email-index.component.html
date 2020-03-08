@@ -3,8 +3,8 @@
         <!-- relative link e.g. /inbox/{{id here}}-->
         <a [routerLink]="email.id" routerLinkActive="active">
             <div class="content">
-                <div class="header">Subject: {{ email.subject }}</div>
-                <p>From: {{ email.from }}</p>
+                <div class="header trim">Subject: {{ email.subject }}</div>
+                <p class="trim">From: {{ email.from }}</p>
             </div>
         </a>
     </div>
