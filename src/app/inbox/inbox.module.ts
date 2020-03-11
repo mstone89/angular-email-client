@@ -1,3 +1,4 @@
+import { ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from './../shared/shared.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -27,7 +28,8 @@ import { EmailFormComponent } from './email-form/email-form.component';
     imports: [
         CommonModule,
         InboxRoutingModule,
-        SharedModule
+        SharedModule,
+        ReactiveFormsModule
     ]
 })
 export class InboxModule { }
