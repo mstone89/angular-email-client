@@ -26,8 +26,9 @@ export class EmailService {
         return this.http.get<Email>(url);
     }
 
-    sendEmail() {
-
+    sendEmail(email: Email) {
+        const url = `${this.rootUrl}/emails`;
+        return this.http.post(url, email);
     }
 
 }

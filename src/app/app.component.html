@@ -1,6 +1,7 @@
 <div class="ui container">
     <div class="ui secondary pointing menu">
         <a routerLink="/" class="item">Angular Email</a>
+        <p *ngIf="username" class="item">Welcome, {{ username }}!</p>
         <div class="right menu">
             <ng-container *ngIf="signedin$ | async; else signedout">
                 <a class="ui item" routerLink="/inbox" routerLinkActive="active">Inbox</a>
